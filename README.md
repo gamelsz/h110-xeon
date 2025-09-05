@@ -13,7 +13,7 @@ It will also enable support for Intel Xeon CPU's. Specifficaly E3 series based o
 
 ## What do I need?
 1. First of all - a motherboard. Your safest option is something with H110 chipset. It may be harder to execute (or even impossible) on more advanced motherboards. So, choose H110. I was making everything on [this Gigabyte board](https://www.gigabyte.com/Motherboard/GA-H110M-DS2-DDR3-rev-10#ov) althrough, it's also safe to use DDR4 standard boards. By default you won't be able to use CPU's newer than [Kaby Lake](https://en.wikipedia.org/wiki/Kaby_Lake)
-2. CoffeeTime software with v0.99 executable - this one is the easiest options in case of modifying your BIOS. If you want to go more avantgarde look up to Intel CSME tools to edit the ME Region. You can find the CoffeeTime on the internet. I can't provide it here because of copyrights :(
+2. CoffeeTime software with v0.99 executable - this one is the easiest options in case of modifying your BIOS. If you want to go more avantgarde look up to Intel CSME tools to edit the ME Region. You can find the CoffeeTime on the internet. 
 3. BIOS for your model of motherboard. In this case I used F20f (Mar 09, 2018) version but you should be fine with anyone.
 4. A thumbdrive formated to FAT32, it can even be 1GB. We will use it only to store BIOS.
 5. [FOR GIGABYTE MOTHERBOARDS] Any hex editor. I used [HXD](https://mh-nexus.de/downloads/HxDSetup.zip) for instance.
@@ -23,15 +23,33 @@ It will also enable support for Intel Xeon CPU's. Specifficaly E3 series based o
 1. Load your BIOS into CoffeeTime and check if the versions, models and dates are written correctly.
 2. First of all you have to change the ME Region. In my case I'm going to use Xeon E3 1270v5 so I choose 11.8.77 Corporate. You should be fine with it either when using consumer processors.
 3. After replacing the ME Region it's time to disable ME.
-4. After disabling it's time to use every patch mentioned in the General tab.
-5. [FOR MSI MOTHERBOARDS] Navigate to Extra and disable ME warning. If you're not using MSI motherboard, skip this step
-6. Update the VBIOS and GOP to the newest version possible.
-7. [FOR CONFIDENTIAL/MOBILE UNITS] You have to use the microcode tab for your unit.
-8. Save your new bios with the SAME EXACT extension you downloaded it. It's also recommended to use the same name.
-9. [FOR GIGABYTE MOTHERBOARDS] Load your brand new BIOS into hex editor and search for **$BDR**. Locate the BIOS integrity verification bit and change it to 00 to disable it.
-10. Save your BIOS and upload it into FAT32 thumbdrive
-11. Run your PC and use built-in BIOS updater. If PC didn't boot you have to desolder the BIOS chip from the motherboard and force program BIOS into it. You can also use a clip with tapes instead of soldering iron/hotair. Remember to make a copy of your working BIOS! 
-12. If BIOS update succeed, you can now prepare your CPU. If it's a CPU up to 8th gen, you don't have to do pin mod and you can run it out of the box. You have to do pin mod in all Coffee Lake CPU's. Pin work is provided below, it's differed by the motherboard manufacturer.
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/coffetime_1.png)
+
+5. After disabling it's time to use every patch mentioned in the General tab. 
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/coffetime_2.png)
+
+6. [FOR MSI MOTHERBOARDS] Navigate to Extra and disable ME warning. If you're not using MSI motherboard, skip this step
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/coffetime_4.png)
+
+7. Update the VBIOS and GOP to the newest version possible.
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/coffetime_3.png)
+
+8. [FOR CONFIDENTIAL/MOBILE UNITS] You have to use the microcode tab for your unit.
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/coffetime_PROTOTYPE.png)
+
+9. Save your new bios with the SAME EXACT extension you downloaded it. It's also recommended to use the same name.
+10. [FOR GIGABYTE MOTHERBOARDS] Load your brand new BIOS into hex editor and search for **$BDR**. Locate the BIOS integrity verification bit and change it to 00 to disable it.
+
+![alt_text](https://github.com/gamelsz/h110-xeon/blob/main/XEONLAKE/Pictures/HEX.png)
+
+11. Save your BIOS and upload it into FAT32 thumbdrive
+12. Run your PC and use built-in BIOS updater. If PC didn't boot you have to desolder the BIOS chip from the motherboard and force program BIOS into it. You can also use a clip with tapes instead of soldering iron/hotair. Remember to make a copy of your working BIOS! 
+13. If BIOS update succeed, you can now prepare your CPU. If it's a CPU up to 8th gen, you don't have to do pin mod and you can run it out of the box. You have to do pin mod in all Coffee Lake CPU's. Pin work is provided below, it's differed by the motherboard manufacturer.
 
 ## Known issues
 1. Intel Xeon E3 v5 are known of incorrect temperature measurements on H110 chipset.
